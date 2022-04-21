@@ -433,7 +433,7 @@ impl Build {
             }
 
             if target.contains("wasi") {
-                configure.args([
+                configure.args(&[
                     // Termios isn't available whatsoever on WASM/WASI so we disable that
                     "no-ui-console",
                     // WASI doesn't support UNIX sockets so we preemptively disable it
